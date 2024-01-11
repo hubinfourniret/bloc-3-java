@@ -93,13 +93,14 @@ public class exercices {
     public static void multiplications(byte table) {
     	if (table <= 12) {
     		for (int i=0 ; i <=10; i++) {
-    			output.println(table *i);
+    			output.println(table + " * " + i + " = " + (table * i));
     		}
     	}else {
     		output.println("entré un nombre entre 1 et 12");
     	}
-    	
     }
+    
+    
     
     public static void main(String[] args) {
         /*output.println("Entrez la température en degrés Celsius : ");
@@ -135,10 +136,11 @@ public class exercices {
         output.println(categorie(age));
     	
     	carresParfaits(100);
-    	*/
+    	
     	output.println("entré un nombre entre 1 et 12");
     	byte nombre = input.nextByte();
     	multiplications(nombre);
+    	*/
     	
     }
 }
