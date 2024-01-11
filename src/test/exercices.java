@@ -100,7 +100,17 @@ public class exercices {
     	}
     }
     
+    public static int factorielle(int nombre) {
+    	int fact=1;
+    	for (int i=2 ; i <=nombre; i++) {
+    		fact*=i;
+    	}
+    	return fact;
+    }
     
+    public static int estPremier(int nombre) {
+    	
+    }
     
     public static void main(String[] args) {
         /*output.println("Entrez la température en degrés Celsius : ");
@@ -140,7 +150,11 @@ public class exercices {
     	output.println("entré un nombre entre 1 et 12");
     	byte nombre = input.nextByte();
     	multiplications(nombre);
-    	*/
     	
+    	output.println("entré un nombre");
+    	int nombre=input.nextInt();
+    	output.println(factorielle(nombre));
+    	*/
+    
     }
 }
