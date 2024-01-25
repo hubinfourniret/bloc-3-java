@@ -2,7 +2,6 @@ package test;
 
 import java.io.*;
 import java.util.Scanner;
-import java.util.Random;
 
 public class exercices {
     public static PrintStream output = new PrintStream(System.out);
@@ -295,8 +294,33 @@ public class exercices {
         
         //_______________________________ exercice 19 _________________________
         
+        public static boolean estBissextile(int annee) {
+        	return (annee%4==0 && annee%100!=0)||(annee%400==0 && annee%4000!=0);
+        }
         
+        //_________________________________ exercie 20 ___________________________
         
+        public static String joursMois(int jour, int annee) {
+        	if (estBissextile(annee) == true){
+                String[] nomsMois = {"Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"};
+                int[] joursMois = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+                int mois = 0;
+                int jourDansMois = 0;
+                while (mois < 12 && jour > (jourDansMois += joursMois[mois++])) ;
+
+                return("Le jour numéro" + jour + "dans une année bissextile correspond au mois de" + nomsMois[mois - 1] + " et au jour " + (jour - (jourDansMois - joursMois[mois - 1])) + ".");
+            }else {
+        	String[] nomsMois = {"Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"};
+            int[] joursMois = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+            int mois = 0;
+            int jourDansMois = 0;
+            while (mois < 12 && jour > (jourDansMois += joursMois[mois++])) ;
+
+            return("Le jour numéro " + jour + " dans une année non-bissextile correspond au mois de " + nomsMois[mois - 1] + " et au jour " + (jour - (jourDansMois - joursMois[mois - 1])) + ".");
+            }
+        }
+        
+//_____________________________________________________________ excution !!! ___________________________________________________________________________
         
     public static void main(String[] args) {
         /*output.println("Entrez la température en degrés Celsius : ");
@@ -375,8 +399,14 @@ public class exercices {
     	String[] tableau1 = {"A", "A", "T", "G", "G","C"};
     	String[] tableau2 = {"C", "T", "A", "C", "A","G"};
     	output.println(taux_concordance(tableau1, tableau2));
-    	*/
     	
+    	output.println(estBissextile(2023));
+    	*/
+    	output.println("Entrez je jour dans l'année : ");
+    	int jour = input.nextInt();
+    	output.println("Entrez l'année : ");
+    	int annee = input.nextInt();
+    	output.println(joursMois(jour,annee));
     	
     
     }
