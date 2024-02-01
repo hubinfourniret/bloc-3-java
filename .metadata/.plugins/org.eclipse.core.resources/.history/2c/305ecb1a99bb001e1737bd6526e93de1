@@ -1,0 +1,13 @@
+
+public class Date {
+	private int jour;
+	private int mois;
+	private int ans;
+	
+	public Ville() {
+		System.out.println("Création d'une date !");
+		this.jour = 0;
+		this.mois = 0;
+		this.ans = 0;
+	}
+}

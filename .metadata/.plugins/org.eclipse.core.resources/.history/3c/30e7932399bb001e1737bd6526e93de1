@@ -1,0 +1,12 @@
+public class Programme {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Date date1=new Date("Caen", 106230, "France");
+		
+		System.out.println(date1.getJour());
+		System.out.println(date1.getMois());
+		System.out.println(date1.getAns());
+	}
+
+}
